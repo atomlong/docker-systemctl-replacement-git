@@ -1,16 +1,18 @@
 # Maintainer: Gore Liu <goreliu@126.com>
+# Contributor: Atom Long <atom.long@hotmail.com>
 
 pkgname=docker-systemctl-replacement-git
 _pkgname=docker-systemctl-replacement
-pkgver=1814.1bb5768
+pkgver=1883.9cbe1a0
 pkgrel=1
 pkgdesc="docker systemctl replacement"
 url='https://github.com/gdraheim/docker-systemctl-replacement'
 arch=('any')
 license=('GPL')
 depends=('python')
-source=("${_pkgname}::git+https://github.com/gdraheim/docker-systemctl-replacement")
+source=("${_pkgname}::git+${url}.git")
 sha512sums=('SKIP')
+install=systemctl.install
 
 pkgver() {
   cd "${srcdir}/${_pkgname}"

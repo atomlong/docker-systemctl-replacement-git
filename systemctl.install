@@ -1,0 +1,11 @@
+## create softlink systemctl
+post_install() {
+[ -x /usr/bin/systemctl ] ||
+ln -vsf systemctl.py /usr/bin/systemctl
+}
+
+## remove softlink
+post_remove() {
+[ $(readlink -f /usr/bin/systemctl) == "systemctl.py" ] &&
+rm -vf /usr/bin/systemctl
+}
